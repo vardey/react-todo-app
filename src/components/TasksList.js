@@ -1,4 +1,5 @@
 import { TABS } from "../const";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const TasksList = (props) => {
   const { tasksList, deleteTaskById, updateTask, currentTab } = props;
@@ -20,7 +21,7 @@ const TasksList = (props) => {
       {filteredTasksList.map((task, index) => {
         return (
           task && (
-            <div
+            <div style={{display:"flex"}}
               className={
                 task.isCompleted ? "listType_completed" : "listType_active"
               }
@@ -37,7 +38,7 @@ const TasksList = (props) => {
                 checked={task.isCompleted}
                 id={task.id}
               />
-              <label
+              <label style={{flex:1}}
                 id={
                   task.isCompleted
                     ? "label_completed_" + task.id
@@ -49,13 +50,7 @@ const TasksList = (props) => {
               </label>
 
               {task.isCompleted && currentTab === TABS.COMPLETED && (
-                <span
-                  onClick={(e) => {
-                    console.log("delete button clicked");
-                    deleteTaskById(task.id);
-                  }}
-                  className="deleteBtn"
-                ></span>
+               <DeleteIcon onClick={()=>deleteTaskById(task.id)}/>
               )}
             </div>
           )
