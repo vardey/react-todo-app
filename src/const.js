@@ -1,0 +1,12 @@
+export const ACTIONS = {
+  ADD_ONE: "ADD_ONE",
+  UPDATE_ONE: "UPDATE_ONE",
+  DELETE_ONE: "DELETE_ONE",
+  DELETE_ALL: "DELETE_ALL",
+};
+
+export const TABS = {
+  ALL: "ALL",
+  COMPLETED: "COMPLETED",
+  ACTIVE: "ACTIVE"
+}

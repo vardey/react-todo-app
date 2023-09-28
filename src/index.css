@@ -1,13 +1,70 @@
+/* Style the tab */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 608px;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  justify-content: center;
+  display: flex;
+  /* width: 800px; */
+  flex-direction: row;
+}
+
+.tab button {
+  background-color: inherit;
+  /* float: left; */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  /* text-align: center; */
+}
+
+.textInput {
+  display: flex;
+  justify-content: center;
+  width: 608px;
+  margin-top: 5px;
+  height: 35px;
+}
+
+#addTaskInput {
+  flex-grow: 2;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.textInput button {
+  flex-grow: 1;
+  border-radius: 4px;
+  background-color: #2F80ED;
+  color: #ccc;
+}
+
+#tasksList label{
+ flex: 1;
+}
+
+#tasksList span{
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
 }
