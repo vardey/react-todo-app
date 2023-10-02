@@ -2,7 +2,7 @@ export const ACTIONS = {
   ADD_ONE: "ADD_ONE",
   UPDATE_ONE: "UPDATE_ONE",
   DELETE_ONE: "DELETE_ONE",
-  DELETE_ALL: "DELETE_ALL",
+  UPDATE_MANY: "UPDATE_MANY",
 };
 
 export const TABS = {

@@ -28,8 +28,8 @@ function App() {
       case ACTIONS.ADD_ONE:
         allTasks.push(task);
         break;
-      case ACTIONS.DELETE_ALL:
-        allTasks = [];
+      case ACTIONS.UPDATE_MANY:
+        allTasks = task;
         break;
       case ACTIONS.DELETE_ONE: {
         const index = getTaskIndexById(task.id, allTasks);

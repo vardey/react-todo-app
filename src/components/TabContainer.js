@@ -16,9 +16,9 @@ const TabContainer = (props) => {
     getTasksListFromLocalStorage() || []
   );
   const [currentTab, setCurrentTab] = useState(TABS.ALL);
+  const [isAddTaskVisible, setIsTaskVisible] = useState((currentTab !== TABS.COMPLETED))
 
   const addTask = (task) => {
-    console.log("addTask", task);
     const newTaskList = [...tasksList, task];
     setTasksList(newTaskList);
     updateLocalStorageTasksList(task, ACTIONS.ADD_ONE);
@@ -32,33 +32,42 @@ const TabContainer = (props) => {
     updateLocalStorageTasksList({ id }, ACTIONS.DELETE_ONE);
   };
 
-//   const deleteAllTasks = () => {
-//     setTasksList([]);
-//     updateLocalStorageTasksList({}, ACTIONS.DELETE_ALL);
-//   };
+  const deleteAllCompletedTasks = () => {
+    const newTasksList = tasksList.filter((task)=> !task.isCompleted);
+    setTasksList(newTasksList);
+    updateLocalStorageTasksList(newTasksList, ACTIONS.UPDATE_MANY);
+  };
 
   const updateTask = (task) => {
-    console.log("updateTask", task);
     const index = getTaskIndexById(task.id, tasksList);
     const newTasksList = [...tasksList];
     newTasksList[index] = task;
-    console.log("new tasks list", newTasksList);
     setTasksList(newTasksList);
     updateLocalStorageTasksList(task, ACTIONS.UPDATE_ONE);
   };
 
-  const openTab = async(tabName) => {
-    console.log(tabName)
+  const openTab = async (tabName) => {
+    console.log(tabName);
     setCurrentTab(tabName);
-  }
+    if (tabName ===TABS.COMPLETED) {
+      setIsTaskVisible(false);
+    }else{
+      setIsTaskVisible(true);
+    }
+  };
 
   return (
     <div className="tabContainer">
       <Header />
-      <Tabs openTab={openTab} />
-      <hr />
-      <AddTask addTask={addTask} />
-      <TasksList currentTab={currentTab} deleteTaskById={deleteTaskById} tasksList={tasksList} updateTask={updateTask}/>
+      <Tabs currentTab={currentTab} openTab={openTab} />
+      <AddTask addTask={addTask} isAddTaskVisible={isAddTaskVisible} />
+      <TasksList
+        currentTab={currentTab}
+        deleteTaskById={deleteTaskById}
+        tasksList={tasksList}
+        updateTask={updateTask}
+        deleteAllCompletedTasks={deleteAllCompletedTasks}
+      />
     </div>
   );
 };
