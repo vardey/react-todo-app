@@ -11,6 +11,7 @@ const Tabs = (props) => {
         id="defaultOpen"
         openTab={() => openTab(TABS.ALL)}
         tabContent="All"
+        style = {{borderBottom : currentTab !== TABS.ALL && "none" }}
       />
       <TabButton
         className={
@@ -20,6 +21,7 @@ const Tabs = (props) => {
         }
         openTab={() => openTab(TABS.ACTIVE)}
         tabContent="Active"
+        style = {{borderBottom : currentTab !== TABS.ACTIVE && "none" }}
       />
       <TabButton
         className={
@@ -29,6 +31,7 @@ const Tabs = (props) => {
         }
         openTab={() => openTab(TABS.COMPLETED)}
         tabContent="Completed"
+        style = {{borderBottom : currentTab !== TABS.COMPLETED && "none" }}
       />
     </div>
   );

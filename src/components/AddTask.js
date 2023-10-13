@@ -18,6 +18,7 @@ const AddTask = (props) => {
           value={taskContent}
           required={true}
           onChange={captureTaskContent}
+          placeholder="add details"
         />
         <button
           onClick={() => {

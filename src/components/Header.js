@@ -1,7 +1,7 @@
 const Header = () => {
 
     return (
-        <h1>#todo app</h1>
+        <h1>#todo</h1>
     )
 
 }

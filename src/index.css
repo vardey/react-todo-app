@@ -18,10 +18,9 @@ body {
 .tab {
   overflow: hidden;
   /* border: 1px solid #ccc; */
-  background-color: #f1f1f1;
   justify-content: space-around;
   display: flex;
-  border-bottom: 0.1vw solid #d6d6d6;
+  border-bottom: 0.1vw solid #BDBDBD;
   flex-direction: row;
 }
 
@@ -31,7 +30,6 @@ body {
   border-left: 0px;
   border-right: 0px;
   border-top: 0px;
-  border-bottom: 0px;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
@@ -50,38 +48,56 @@ body {
 #addTaskInput {
   flex-grow: 2;
   margin-right: 10px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
+  border-radius: 12px;
+  border: 1px solid #BDBDBD;
+}
+
+#addTaskInput::placeholder {
+  color: var(--Gray-3, #828282);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 8px;
 }
 
 .textInput button {
   flex-grow: 1;
   border-radius: 4px;
   background-color: #2F80ED;
-  color: #ccc;
+  color: #fefefe;
+  border-radius: 12px;
+  background: #2F80ED;
+  box-shadow: 0px 2px 6px 0px rgba(127, 177, 243, 0.40);
 }
 
-#tasksList{
+#tasksList {
   padding-top: 10px;
 }
 
-#tasksList label{
- flex: 1;
+#tasksList label {
+  flex: 1;
 }
 
-#tasksList span{
+#tasksList span {
   cursor: pointer;
 }
 
 h1 {
   text-align: center;
+  height: 41px;
+  flex-shrink: 0;
+  color: #333;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.62px;
 }
 
-#currentActiveButton {
-  border-left: 0px;
-  border-right: 0px;
-  border-top: 0px;
-  border-bottom: 4px;
-  border-radius:4px 4px 0px 0px;
-  border-bottom-color: #2F80ED;
-  border-bottom-width: 4px;
+.currentActiveButton {
+
+  border-bottom: 4px solid #2F80ED;
 }

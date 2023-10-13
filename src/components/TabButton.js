@@ -4,7 +4,7 @@ const TabButton = (props) => {
 
   return (
     <>
-      <button
+      <button style={props.style}
       className={className}
         id={id}
         onClick={() => {
